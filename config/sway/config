@@ -239,8 +239,8 @@ input * {
 
 
 #monitor settings
-output DP-1 mode 2560x1440 pos 0 0
-output DP-2 mode 2560x1440 pos 2560 0
+#output DP-1 mode 2560x1440 pos 0 0
+#output DP-2 mode 2560x1440 pos 2560 0
 
 bindsym $mod+Shift+x exec swaylock-fancy -t "Languages that try to disallow idiocy become themselves idiotic." 
 
