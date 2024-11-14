@@ -15,6 +15,6 @@ sudo nixos-rebuild switch
 
 # Kopiere die Sway-Konfiguration
 mkdir -p ~/.config/sway  # Stelle sicher, dass das Zielverzeichnis existiert
-sudo cp "$REPO_ROOT/config/sway/config" ~/.config/sway/
+sudo cp "$REPO_ROOT/config/sway/*" ~/.config/sway/
 
 echo "Dotfiles wurden erfolgreich kopiert."

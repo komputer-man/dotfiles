@@ -217,15 +217,18 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+
+    status_command ~/.config/sway/bar.sh
 
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        statusline #ebdbb2
+        background #3c3836
+        inactive_workspace #282828 #282828 #928374
+	focused_workspace #83a598 #458588 #eddbb2
     }
 }
-
+exec_always ~/.config/sway/weather.sh 
 # gefriggel von mir
 
 # give Sway a little time to startup before starting kanshi.
@@ -239,8 +242,8 @@ input * {
 
 
 #monitor settings
-#output DP-1 mode 2560x1440 pos 0 0
-#output DP-2 mode 2560x1440 pos 2560 0
+output DP-1 mode 2560x1440 pos 0 0
+output DP-2 mode 2560x1440 pos 2560 0
 
 bindsym $mod+Shift+x exec swaylock-fancy -t "Languages that try to disallow idiocy become themselves idiotic." 
 

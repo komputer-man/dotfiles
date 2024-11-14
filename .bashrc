@@ -6,3 +6,4 @@ alias ll='ls -l'
 alias la='ls -la'
 alias nixr='sudo nixos-rebuild switch'
 alias nixc='sudo nvim /etc/nixos/configuration.nix'
+alias nixdelgen="sudo nix-collect-garbage  --delete-old"

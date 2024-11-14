@@ -106,15 +106,17 @@
   environment.systemPackages = with pkgs; [
   	htop
 	neovim
-    spotify
+        spotify
 	sway
 	swaylock-fancy
 	parted
 	mullvad-vpn
+	gparted
 	cowsay
 	jetbrains.pycharm-professional
 	git
 	onlyoffice-bin
+	pamixer
 #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
@@ -142,22 +144,22 @@ services.mullvad-vpn.enable = true;
   
   # Andere Konfigurationen...
 
-  #fileSystems."/mnt/HDD_2TB" = {
-  #  device = "/dev/disk/by-uuid/0175bd66-c6a2-4376-a86b-996d1a795e20";
-  #  fsType = "ext4";  # Oder das entsprechende Dateisystem Ihrer Platte
-  #  options = [ "defaults" "nofail" "x-systemd.automount" ];
-  #};
+  fileSystems."/mnt/HDD_2TB" = {
+    device = "/dev/disk/by-uuid/0175bd66-c6a2-4376-a86b-996d1a795e20";
+    fsType = "ext4";  # Oder das entsprechende Dateisystem Ihrer Platte
+    options = [ "defaults" "nofail" "x-systemd.automount" ];
+  };
 
   # Berechtigungen für alle Benutzer setzen
-  #system.activationScripts = {
-  #  setPermissions = {
-  #    text = ''
-  #      mkdir -p /mnt/HDD_2TB
-  #      chmod 1777 /mnt/HDD_2TB
-  #    '';
-  #    deps = [];
-  #  };
-  #};
+  system.activationScripts = {
+    setPermissions = {
+      text = ''
+        mkdir -p /mnt/HDD_2TB
+        chmod 1777 /mnt/HDD_2TB
+      '';
+      deps = [];
+    };
+  };
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
